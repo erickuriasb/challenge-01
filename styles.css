@@ -1,0 +1,93 @@
+
+
+* {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-variation-settings:
+    "slnt" 0;
+}
+
+input {
+    padding: .8rem !important;
+    border-radius: .8rem !important;
+    font-size: .75rem !important;
+    border-color: rgba(255, 255, 255, .3) !important;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, .5) !important;
+}
+
+#main-container {
+    /*background-color: rgba(100, 44, 209, .9);*/
+    background: linear-gradient(225deg,#652CD1, 1%, #121826);
+}
+
+.card {
+    background-color: rgba(33, 41, 54, 1);
+    border-color: rgba(255, 255, 255, .3) !important;
+    border-radius: .8rem !important;
+}
+
+.card-title {
+    font-size: 1.35rem !important;
+}
+
+.form-label {
+    font-size: 0.75rem !important;
+}
+
+.action-button {
+    background: linear-gradient(0deg, #652CD1, 10%, #845EEE) !important;
+    border-color: rgba(255, 255, 255, 0) !important;
+    border-radius: 1.5rem !important;
+    border-width: .2rem;
+    font-size: .8rem;
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+    padding-top: .75rem !important;
+    padding-bottom: .75rem !important;
+}
+.action-button:hover {
+    background: linear-gradient(0deg, #121826, 10%, #652CD1) !important;
+    border-color: rgba(255, 255, 255, .5) !important;
+    transition: all .3s ease;
+}
+
+.info-p {
+    color: rgba(255, 255, 255, .7);
+    margin-right: .8rem !important;
+}
+
+.option-button {
+    background-color: rgba(255, 255, 255, 0) !important;
+    border-radius: 1rem !important;
+    border-color: rgba(255, 255, 255, .5) !important;
+    border: solid 1px;
+
+}
+
+.option-button:hover {
+    background-color: #652CD1 !important;
+    border-color: rgba(255, 255, 255, 1) !important;
+    border: solid 1px;
+    color: #fff;
+    
+}
+
+.option-button-selected {
+    background-color: #652CD1 !important;
+    border-color: rgba(255, 255, 255, 1) !important;
+    border: solid 1px;
+    color: #fff;
+}
+
+.steps {
+    font-size: .8rem !important;
+}
+
+.active {
+    background-color: #845EEE !important;
+    border-color: rgba(132, 94, 238, .5) !important;
+    border-width: solid .1rem !important;
+}
