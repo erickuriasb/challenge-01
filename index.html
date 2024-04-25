@@ -13,7 +13,7 @@
 </head>
 <body>
     <div id="main-container" class="container-fluid">
-        <div class="d-none row vh-100 d-flex justify-content-center align-content-center">
+        <div id="row-step-1" class="row vh-100 d-flex justify-content-center align-content-center">
             <div class="col-4">
                 <div class="card text-light p-5 border-light-subtle">
                     <div id="card-first-step" class="card-body">
@@ -21,14 +21,14 @@
                         <form>
                             <div class="mb-4">
                               <label for="exampleInputEmail1" class="form-label">Name</label>
-                              <input type="text" class="form-control bg-secondary text-light" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="enter your name" style="--bs-bg-opacity: .1;">
+                              <input type="text" class="form-control bg-secondary text-light" id="name" aria-describedby="emailHelp" placeholder="enter your name" style="--bs-bg-opacity: .1;">
                             </div>
                             <div class="mb-3">
                               <label for="exampleInputPassword1" class="form-label">Email</label>
-                              <input type="email" class="form-control bg-secondary text-light" id="exampleInputPassword1" placeholder="example@gmail.com" style="--bs-bg-opacity: .1;">
+                              <input type="email" class="form-control bg-secondary text-light" id="email" placeholder="example@gmail.com" style="--bs-bg-opacity: .1;">
                             </div>
                             <div class="d-flex justify-content-center mt-5">
-                                <button type="submit" class="action-button btn btn-primary border-light">Continue</button>
+                                <button id="btn_step_1" type="submit" class="action-button btn btn-primary border-light">Continue</button>
                             </div>
                         </form>
                     </div>
@@ -45,24 +45,25 @@
                 </div>  
             </div>
         </div>
-        <div class="d-none row vh-100 d-flex justify-content-center align-content-center"">
+        <div id="row-step-2" class="d-none row vh-100 d-flex justify-content-center align-content-center"">
             <div class="col-4">
                 <div class="card text-white p-5 border-light-subtle">
                     <div id="card-second-step" class="card-body">
                         <h4 class="card-title pt-4 pb-4 text-left">Which topics are you interested?</h4>
                         <form>
-                            <div class="d-grid mb-4">
-                                <button type="button" class="option-button btn btn-outline-light text-start p-3">Software Development</button>
+                            <div id="topics">
+                                <div class="d-grid mb-4">
+                                    <button type="button" value="Software Developer" class="option-button btn btn-outline-light text-start p-3">Software Development</button>
+                                </div>
+                                <div class="d-grid mb-4">
+                                    <button type="button" value="User Experience" class="option-button btn btn-outline-light text-start p-3">User Experience</button>
+                                </div>
+                                <div class="d-grid mb-4">
+                                    <button type="button" value="Graphic Design" class="option-button btn btn-outline-light text-start p-3">Graphic Design</button>
+                                </div>
                             </div>
-                            <div class="d-grid mb-4">
-                                <button type="button" class="option-button btn btn-outline-light text-start p-3">User Experience</button>
-                            </div>
-                            <div class="d-grid mb-4">
-                                <button type="button" class="option-button btn btn-outline-light text-start p-3">Graphic Design</button>
-                            </div>
-                            
                             <div class="d-flex justify-content-center mt-5">
-                                <button type="submit" class="action-button btn btn-primary border-light">Continue</button>
+                                <button id="btn_step_2" type="submit" class="action-button btn btn-primary border-light">Continue</button>
                             </div>
                         </form>
                     </div>
@@ -79,28 +80,27 @@
                 </div>
             </div>
         </div>
-        <div class="row vh-100 d-flex justify-content-center align-content-center"">
+        <div id="row-step-3" class="d-none row vh-100 d-flex justify-content-center align-content-center"">
             <div class="col-4">
                 <div class="card text-white p-5 border-light-subtle">
                     <div id="card-second-step" class="card-body">
                         <h4 class="card-title pt-4 pb-4 text-left">Summary</h4>
                         <form>
                             <div class="mb-2">
-                              <p class="fw-bold"><span class="info-p fw-semibold">Name:</span>Emily Johnson</p>
+                                <p id="res-name" class="fw-bold"><span class="info-p fw-semibold">Name:</span></p>
                             </div>
                             <div class="mb-2">
-                                <p class="fw-bold"><span class="info-p fw-semibold">Email:</span>emily@emilyjohnsonstl.com</p>
+                                <p id="res-email" class="fw-bold"><span class="info-p fw-semibold">Email:</span></p>
                             </div>
                             <div class="mb-2">
                                 <p class="fw-bold"><span class="info-p fw-semibold">Topics:</span>
-                                    <ul id="topics" class="fw-semibold">
-                                        <li>User Experience</li>
-                                        <li>Graphic Design</li>
+                                    <ul id="selected-topics" class="fw-semibold">
+                                        
                                     </ul>
                                 </p>
                             </div>
                             <div class="d-flex justify-content-center mt-5">
-                                <button type="submit" class="action-button btn btn-primary border-light">Confirm</button>
+                                <button id="btn_step_3" type="submit" class="action-button btn btn-primary border-light">Confirm</button>
                             </div>
                         </form>
                     </div>
@@ -122,5 +122,6 @@
     
     <!-- Bootstrap JS Files -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
 </body>
 </html>
