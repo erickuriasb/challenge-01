@@ -34,41 +34,43 @@ for( let i=0 ; i < topics.childElementCount; i++){
 
 btn_step_1.addEventListener('click', (event) => {
     event.preventDefault();
-    if (validate_name() || validate_email()){
-        let message = document.querySelector('#message');
-        if (message.childElementCount == 0){
-            const node = document.createElement('div');
-            const textNode = document.createTextNode('Please Fill out required fields!');
-            node.classList.add('text-danger','mt-2');
-            node.append(textNode);
-            message.appendChild(node);
-            markRequiredFields();
-        }
-    }else{
+    if (validate_name() && validate_email()){
         row_step_1.classList.add('d-none');
         row_step_2.classList.remove('d-none');
         const name = document.querySelector('#name');
         const email = document.querySelector('#email');
         data.name = name.value;
         data.email = email.value;
+    }else{
+        let message = document.querySelector('#inputs-message');
+        if (message.childElementCount == 0){
+            const node = document.createElement('div');
+            const textNode = document.createTextNode('Please fill required fields.');
+            node.classList.add('text-danger','mt-2');
+            node.append(textNode);
+            message.appendChild(node);
+            markRequiredFields();
+        }
     }
-
-
 });
 
 function validate_name(){
     if (input_name.value === ""){
-        return true;
-    }else{
         return false;
+    }else{
+        return true;
     }
 }
 function validate_email(){
     if (input_email.value === ""){
-        return true;
-    }else{
-        
         return false;
+    }else{
+        const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (input_email.value.match(validRegex)){
+            return true;
+        }else{
+            return false;
+        }
     }
 }
 function markRequiredFields(){
@@ -84,26 +86,39 @@ function markRequiredFields(){
 
 btn_step_2.addEventListener('click', (event) => {
     event.preventDefault();
-    row_step_2.classList.add('d-none');
-    row_step_3.classList.remove('d-none');
     for(let i=0; i < topics.childElementCount; i++ ){
         if (topics.children[i].firstElementChild.classList.contains('option-button-selected')){
             data.topics.push(topics.children[i].firstElementChild.value)
         }
     }
-    for (let i=0; i < data.topics.length; i++){
-        let node = document.createElement('li');
-        let textNode = document.createTextNode(data.topics[i]);
+    if (data.topics.length == 0){
+        const topicsMessage = document.querySelector('#topics-message');
+        const node = document.createElement('div');
+        const textNode = document.createTextNode('Please select at least one Topic.');
+        node.classList.add('text-danger','mt-2');
         node.append(textNode);
-        selected_topics.appendChild(node);
+        topicsMessage.appendChild(node);
+    }else{
+        for (let i=0; i < data.topics.length; i++){
+            let node = document.createElement('li');
+            let textNode = document.createTextNode(data.topics[i]);
+            node.append(textNode);
+            selected_topics.appendChild(node);
+        }
+        textNode = data.name
+        document.querySelector('#res-name').append(textNode);
+        textNode = data.email
+        document.querySelector('#res-email').append(textNode);
+        row_step_2.classList.add('d-none');
+        row_step_3.classList.remove('d-none');
     }
-    textNode = data.name
-    document.querySelector('#res-name').append(textNode);
-    textNode = data.email
-    document.querySelector('#res-email').append(textNode);
 });
 
 btn_step_3.addEventListener('click', (event) => {
-    event.preventDefault();
+    //event.preventDefault();
 });
+
+function validateSelectedTopics(){
+    const topicsSelected = document.querySelector('');
+}
 
