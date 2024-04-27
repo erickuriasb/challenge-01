@@ -89,7 +89,10 @@ btn_step_2.addEventListener('click', (event) => {
     event.preventDefault();
     for(let i=0; i < topics.childElementCount; i++ ){
         if (topics.children[i].firstElementChild.classList.contains('option-button-selected')){
-            data.topics.push(topics.children[i].firstElementChild.value)
+            topic = {
+                "topic": topics.children[i].firstElementChild.value
+            }
+            data.topics.push(topic)
         }
     }
     if (data.topics.length == 0){
@@ -102,7 +105,7 @@ btn_step_2.addEventListener('click', (event) => {
     }else{
         for (let i=0; i < data.topics.length; i++){
             let node = document.createElement('li');
-            let textNode = document.createTextNode(data.topics[i]);
+            let textNode = document.createTextNode(data.topics[i].topic);
             node.append(textNode);
             selected_topics.appendChild(node);
         }
@@ -116,7 +119,8 @@ btn_step_2.addEventListener('click', (event) => {
 });
 
 btn_step_3.addEventListener('click', (event) => {
-    //event.preventDefault();
+    event.preventDefault();
+    console.log(data);
 });
 
 function validateSelectedTopics(){
