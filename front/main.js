@@ -120,16 +120,6 @@ btn_step_2.addEventListener('click', (event) => {
 
 btn_step_3.addEventListener('click', (event) => {
     event.preventDefault();
-    // let xhttp = new XMLHttpRequest();
-    // xhttp.onreadystatechange = function() {
-    //     if (this.readyState == 4 && this.status == 200) {
-    //       cFunction(this);
-    //     }
-    //  };
-    // xhttp.open("POST", "http://localhost:8000/user/", true);
-    // xhttp.setRequestHeader("content-type", "application/json");
-    // response = xhttp.send(JSON.stringify(data));
-    // console.log(response);
     let url = "http://localhost:8000/user/";
 
     fetch(url, {
