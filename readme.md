@@ -14,3 +14,4 @@ We have, as mentioned beafore, a form divided in three steps. First with basic p
 Second where the user select at least one topic:
 
 ![](front/captures/capture2-front.png)
+
