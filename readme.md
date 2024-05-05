@@ -8,4 +8,9 @@ On the server side the data is received, validaded, processed and stored at the 
 
 ## Front
 We have, as mentioned beafore, a form divided in three steps. First with basic personal information:
+
 ![](front/captures/capture1-front.png)
+
+Second where the user select at least one topic:
+
+![](front/captures/capture2-front.png)
